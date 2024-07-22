@@ -11,9 +11,12 @@ public class ContainerCounter : BaseCounter, IKitchenObjectParent
 
     public override void Interact(PlayerController player)
     {
-        Transform kitchenObjTransform = Instantiate(kitchenObjSO.prefab);
-        kitchenObjTransform.GetComponent<KitchenObject>().SetKitchenObjectParent(player);
+        if (!player.HasKitchenObject())
+        {
+            Transform kitchenObjTransform = Instantiate(kitchenObjSO.prefab);
+            kitchenObjTransform.GetComponent<KitchenObject>().SetKitchenObjectParent(player);
 
-        OnPlayerGrabbedObject?.Invoke(this, EventArgs.Empty);
+            OnPlayerGrabbedObject?.Invoke(this, EventArgs.Empty);
+        }
     }
 }
