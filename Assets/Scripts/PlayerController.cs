@@ -57,6 +57,11 @@ public class PlayerController : NetworkBehaviour, IKitchenObjectParent
 
     void Update()
     {
+        if (!IsOwner)
+        {
+            return;
+        }
+
         HandleMovement();
         HandleInteractions();
     }

@@ -10,13 +10,13 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] private AudioClipRefsSO audioClipRefsSO;
 
-    private float volume = 1f;
+    private float volume = 0f;
 
     private void Awake()
     {
         Instance = this;
 
-        volume = PlayerPrefs.GetFloat(PLAYER_PREFS_SOUND_EFFECTS_VOLUME, 1f);
+        volume = PlayerPrefs.GetFloat(PLAYER_PREFS_SOUND_EFFECTS_VOLUME, 0f);
     }
 
     private void Start()
