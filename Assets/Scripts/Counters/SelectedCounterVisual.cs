@@ -9,7 +9,23 @@ public class SelectedCounterVisual : MonoBehaviour
 
     private void Start()
     {
-        //PlayerController.Instance.OnSelectedCounterChanged += Player_OnSelectedCounterChanged;
+        if (PlayerController.LocalInstance != null)
+        {
+            PlayerController.LocalInstance.OnSelectedCounterChanged += Player_OnSelectedCounterChanged;
+        }
+        else
+        {
+            PlayerController.OnAnyPlayerSpawned += PlayerController_OnAnyPlayerSpawned;
+        }
+    }
+
+    private void PlayerController_OnAnyPlayerSpawned(object sender, System.EventArgs e)
+    {
+        if (PlayerController.LocalInstance != null)
+        {
+            PlayerController.LocalInstance.OnSelectedCounterChanged -= Player_OnSelectedCounterChanged;
+            PlayerController.LocalInstance.OnSelectedCounterChanged += Player_OnSelectedCounterChanged;
+        }
     }
 
     private void Player_OnSelectedCounterChanged(object sender, PlayerController.OnSelectedCounterChangedEventArgs e)
