@@ -204,4 +204,6 @@ public class PlayerController : NetworkBehaviour, IKitchenObjectParent
     public void ClearKitchenObject() { kitchenObject = null; }
 
     public bool HasKitchenObject() { return kitchenObject != null; }
+
+    public NetworkObject GetNetworkObject() { return NetworkObject; }
 }

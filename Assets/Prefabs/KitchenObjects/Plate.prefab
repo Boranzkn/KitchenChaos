@@ -135,7 +135,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7859255584879019741}
+  - component: {fileID: 2450560861014097767}
   - component: {fileID: 6845556103838910982}
+  - component: {fileID: 5533702559063965077}
   m_Layer: 0
   m_Name: Plate
   m_TagString: Untagged
@@ -161,6 +163,27 @@ Transform:
   - {fileID: 5882397549105157198}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2450560861014097767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4122008288897037296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 497633499
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &6845556103838910982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +204,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 59df40a7a938c5a44bf28db2a930023e, type: 2}
   - {fileID: 11400000, guid: 3a98616977ae5da40a6713299f44b659, type: 2}
   - {fileID: 11400000, guid: 4beea5ea1ece12c48a2d8d1d4ca04b41, type: 2}
+--- !u!114 &5533702559063965077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4122008288897037296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3439233feff5d2249855644d5f1eb933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5509466295343919074
 GameObject:
   m_ObjectHideFlags: 0
