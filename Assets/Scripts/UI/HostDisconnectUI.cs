@@ -5,9 +5,17 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HostDisconnectUI : MonoBehaviour
+public class HostDisconnectUI : NetworkBehaviour
 {
-    [SerializeField] private Button playAgainButton;
+    [SerializeField] private Button mainMenuButton;
+
+    private void Awake()
+    {
+        mainMenuButton.onClick.AddListener(() =>
+        {
+            Loader.Load(Loader.Scene.MainMenuScene);
+        });
+    }
 
     private void Start()
     {
@@ -18,7 +26,7 @@ public class HostDisconnectUI : MonoBehaviour
 
     private void NetworkManager_OnClientDisconnectCallback(ulong clientId)
     {
-        if (clientId == NetworkManager.ServerClientId)
+        if (!NetworkManager.IsServer)
         {
             // Server is shutting down
             Show();
