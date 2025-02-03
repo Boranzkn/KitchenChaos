@@ -47,7 +47,13 @@ public class PlayerController : NetworkBehaviour, IKitchenObjectParent
             LocalInstance = this;
         }
 
-        transform.position = spawnPositions[(int) OwnerClientId];
+        for (int i = 0; i < NetworkManager.Singleton.ConnectedClientsIds.Count; i++)
+        {
+            if (OwnerClientId == NetworkManager.Singleton.ConnectedClientsIds[i])
+            {
+                transform.position = spawnPositions[i];
+            }
+        }
 
         OnAnyPlayerSpawned?.Invoke(this, EventArgs.Empty);
 
